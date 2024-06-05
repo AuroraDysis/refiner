@@ -14,7 +14,8 @@ export type InstructionName =
   | "emailText"
   | "chatMessageText"
   | "gitCommitMessageText"
-  | "codeReviewText";
+  | "codeReviewText"
+  | "academicText";
 
 export interface InstructionGroup {
   groupName: string;
@@ -165,6 +166,12 @@ export const instructionGroups: InstructionGroup[] = [
           Discuss code, not character. Keep it friendly and professional. Be concise. Use emojis sparingly if necessary.",
         emoji: "👩‍💻",
       },
+      {
+        name: "academicText",
+        title: "Academic",
+        prompt: "Treat provided text as an academic paper. Make sure it's clear, concise, and professional. Use formal language and avoid contractions. Keep LaTeX formatting.",
+        emoji: "🎓"
+      }
     ],
   },
 ];
