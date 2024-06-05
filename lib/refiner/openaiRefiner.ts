@@ -7,7 +7,9 @@ import { trackRefine } from "../tracker";
 import { titleCase } from "../strings";
 import { getCustomPrompts } from "./customPrompts";
 
-const openai = new OpenAI();
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY || "",
+});
 const model = process.env.OPENAI_MODEL || "gpt-3.5-turbo";
 
 export const languageDetector = new LanguageDetect();
