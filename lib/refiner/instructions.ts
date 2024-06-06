@@ -10,11 +10,10 @@ export type InstructionName =
   | "emoji"
   | "highlight"
   | "markdown"
+  | "latex"
   | "bulletPoints"
   | "emailText"
   | "chatMessageText"
-  | "gitCommitMessageText"
-  | "codeReviewText"
   | "academicText";
 
 export interface InstructionGroup {
@@ -123,6 +122,12 @@ export const instructionGroups: InstructionGroup[] = [
         emoji: "Ⓜ️",
       },
       {
+        name: "latex",
+        title: "LaTeX",
+        prompt: "Use LaTeX to format the text. Format equations, variables, and other math-related content using LaTeX.",
+        emoji: "🧮",
+      },
+      {
         name: "bulletPoints",
         title: "Bullet Points",
         prompt: "Convert long paragraphs into bullet points.",
@@ -149,27 +154,9 @@ export const instructionGroups: InstructionGroup[] = [
         emoji: "💬",
       },
       {
-        name: "gitCommitMessageText",
-        title: "Git Commit Message",
-        prompt:
-          "Treat provided text as a git commit message. Ensure it's formatted with a short summary line, \
-          followed by a blank line, followed by a more detailed description. \
-          Ensure that the summary line is less than 50 characters. Ensure that the lines in the description are less than 72 characters. \
-          Avoid using past tense, and use the imperative mood instead.",
-        emoji: "🌱",
-      },
-      {
-        name: "codeReviewText",
-        title: "Code Review",
-        prompt:
-          "Treat provided text as a code review. Be kind, specific, and constructive. When suggesting improvements, don't command. \
-          Discuss code, not character. Keep it friendly and professional. Be concise. Use emojis sparingly if necessary.",
-        emoji: "👩‍💻",
-      },
-      {
         name: "academicText",
         title: "Academic",
-        prompt: "Treat provided text as an academic paper. Make sure it's clear, concise, and professional. Use formal language and avoid contractions. Keep LaTeX formatting.",
+        prompt: "Treat provided text as a paragraph in an academic paper. Make sure it's clear, concise, and professional. Use formal language and avoid contractions. Keep LaTeX formatting.",
         emoji: "🎓"
       }
     ],
