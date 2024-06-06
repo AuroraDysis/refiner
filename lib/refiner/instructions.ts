@@ -1,17 +1,11 @@
 export type InstructionName =
-  | "formal"
-  | "casual"
-  | "friendly"
-  | "playful"
-  | "professional"
-  | "positive"
-  | "short"
-  | "simple"
-  | "emoji"
-  | "highlight"
-  | "markdown"
-  | "latex"
-  | "bulletPoints"
+  | "basicProofread"
+  | "awkwardParts"
+  | "streamline"
+  | "polish"
+  | "trim"
+  | "clarityAndFlow"
+  | "significantClarityAndFlow"
   | "emailText"
   | "chatMessageText"
   | "academicText";
@@ -31,134 +25,83 @@ export interface Instruction {
 
 export const instructionGroups: InstructionGroup[] = [
   {
-    groupName: "Tone",
-    emoji: "🎭",
+    groupName: "Proofread",
+    emoji: "🔍",
+    // Proofread this 你可以从这个最基本的校稿指令开始。
+    // Fix only awkward parts 仅作些许编辑, 修正非英语母语人士常犯的错误, 包括用词、语法和逻辑。
+    // Streamline any awkward words or phrases 精简和梳理不通顺之处, 使整体内容更清晰。
+    // Polish any awkward words or phrases 更积极地编辑和润饰, 修改程度更高
+    // Trim the fat 如果文本太过冗长, 这能修正饶口的语句和删除赘字, 缩短文本约10%。
+    // Proofread this and improve clarity and flow
+    // Proofread this, significantly improving clarity and flow
     instructions: [
       {
-        name: "formal",
-        title: "Formal",
-        prompt: "Make the text sound more formal.",
-        emoji: "👔",
+        name: "basicProofread",
+        title: "最基本的校稿指令",
+        prompt: "Proofread this text",
+        emoji: "🔍",
       },
       {
-        name: "casual",
-        title: "Casual",
-        prompt: "Make the text sound more casual.",
-        emoji: "👕",
+        name: "awkwardParts",
+        title:
+          "仅作些许编辑, 修正非英语母语人士常犯的错误, 包括用词、语法和逻辑",
+        prompt: "Fix only awkward parts",
+        emoji: "🔍",
       },
       {
-        name: "friendly",
-        title: "Friendly",
-        prompt: "Make the text sound more friendly.",
-        emoji: "👋",
+        name: "streamline",
+        title: "精简和梳理不通顺之处, 使整体内容更清晰",
+        prompt: "Streamline any awkward words or phrases",
+        emoji: "🔍",
       },
       {
-        name: "playful",
-        title: "Playful",
-        prompt: "Make the text sound more playful.",
-        emoji: "🎉",
+        name: "polish",
+        title: "更积极地编辑和润饰, 修改程度更高",
+        prompt: "Polish any awkward words or phrases",
+        emoji: "🔍",
       },
       {
-        name: "professional",
-        title: "Professional",
-        prompt: "Make the text sound more professional.",
-        emoji: "👩‍💼",
+        name: "trim",
+        title: "如果文本太过冗长",
+        prompt: "Trim the fat",
+        emoji: "🔍",
       },
       {
-        name: "positive",
-        title: "Positive",
-        prompt: "Make the text sound more positive.",
-        emoji: "🌞",
-      },
-    ],
-  },
-  {
-    groupName: "Clarity",
-    emoji: "🔎",
-    instructions: [
-      {
-        name: "short",
-        title: "Short",
-        prompt:
-          "Remove unnecessary words and repetitions. Replace long passages with shorter alternatives.",
-        emoji: "🔪",
+        name: "clarityAndFlow",
+        title: "Improve clarity and flow",
+        prompt: "Improve clarity and flow",
+        emoji: "🔍",
       },
       {
-        name: "simple",
-        title: "Simple",
-        prompt:
-          "Make the text simpler. Use simple language. Use shorter words and sentences.",
-        emoji: "👶",
-      },
-    ],
-  },
-  {
-    groupName: "Formatting",
-    emoji: "📄",
-    instructions: [
-      {
-        name: "emoji",
-        title: "Emoji",
-        prompt:
-          "Find and insert emojis throughout the text to make it more expressive and easier to scan. \
-          Annotate with emojis sentences, phrases, and words that are important, surprising, or funny.",
-        emoji: "😀",
-      },
-      {
-        name: "highlight",
-        title: "Highlight",
-        prompt:
-          "Use bold, italics, and other formatting to highlight important parts of the text. Use formatting to make the \
-          text easier to scan.",
-        emoji: "🔦",
-      },
-      {
-        name: "markdown",
-        title: "Markdown",
-        prompt:
-          "Use Markdown to format the text. Format naked URLs as Markdown links unless they are part of the code block. \
-          Inline links in text, whenever it is possible and appropriate. When applicable, use appropriate link text. \
-          Wrap variables, file names, and other code in backticks.",
-        emoji: "Ⓜ️",
-      },
-      {
-        name: "latex",
-        title: "LaTeX",
-        prompt: "Use LaTeX to format the text. Format equations, variables, and other math-related content using LaTeX.",
-        emoji: "🧮",
-      },
-      {
-        name: "bulletPoints",
-        title: "Bullet Points",
-        prompt: "Convert long paragraphs into bullet points.",
-        emoji: "📝",
+        name: "significantClarityAndFlow",
+        title: "Significantly improving clarity and flow",
+        prompt: "Significantly improving clarity and flow",
+        emoji: "🔍",
       },
     ],
   },
   {
     groupName: "Context",
-    emoji: "🙊",
+    emoji: "📚",
     instructions: [
       {
         name: "emailText",
         title: "Email",
-        prompt: "Treat provided text as an email.",
+        prompt: "email text",
         emoji: "📧",
       },
       {
         name: "chatMessageText",
         title: "Chat Message",
-        prompt:
-          "Treat provided text as a chat message. Make it sound professional yet friendly. \
-          Make sure it's clear, concise, and polite. Use emojis sparingly if necessary.",
+        prompt: "chat message text",
         emoji: "💬",
       },
       {
         name: "academicText",
         title: "Academic",
-        prompt: "Treat provided text as a paragraph in an academic paper. Make sure it's clear, concise, and professional. Use formal language and avoid contractions. Keep LaTeX formatting.",
-        emoji: "🎓"
-      }
+        prompt: "academic text",
+        emoji: "🎓",
+      },
     ],
   },
 ];
