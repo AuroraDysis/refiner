@@ -51,13 +51,14 @@ function InstructionMenu({
       );
     } else {
       // remove other instructions in the same group
-      if (instructionGroup.exclusive) {
-        const groupNames = instructionGroups
-                .find((group) => group.groupName === instructionGroup.groupName)
-                ?.instructions.map((instruction) => instruction.name)
+      if (instructionGroup.exclusive)  {
+        // output instructionNames in nextjs console
+        console.log(instructionGroup);
+        console.log(instructionNames);
+        const groupNames = instructionGroup.instructions.map((instruction) => instruction.name)
                 .filter((name) => name !== instructionName);
         setInstructionNames(
-          [...instructionNames.filter((name) => !groupNames?.includes(name)), instructionName]
+          [...instructionNames.filter((name) => !groupNames.includes(name)), instructionName]
         );
       } else {
         setInstructionNames([...instructionNames, instructionName]);

@@ -40,8 +40,23 @@ function InstructionGroupToggleBar({
     <ToggleButtonGroup
       exclusive={instructionGroup.exclusive}
       value={instructionNames}
-      onChange={(event, value) => {
-        setInstructionNames(value);
+      onChange={(event, instructionName) => {
+        if (isInstructionSelected(instructionName)) {
+          setInstructionNames(
+            instructionNames.filter((name) => name !== instructionName)
+          );
+        } else {
+          if (instructionGroup.exclusive)  {
+            const groupNames = instructionGroup.instructions.map((instruction) => instruction.name)
+                    .filter((name) => name !== instructionName);
+            setInstructionNames(
+              [...instructionNames.filter((name) => !groupNames.includes(name)), instructionName]
+            );
+          } else {
+            setInstructionNames([...instructionNames, instructionName]);
+          }
+        }
+        console.log(instructionNames);
       }}
       size="small"
     >
