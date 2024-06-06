@@ -39,44 +39,44 @@ export const instructionGroups: InstructionGroup[] = [
         name: "basicProofread",
         title: "最基本的校稿指令",
         prompt: "Proofread this text",
-        emoji: "🔍",
+        emoji: "Proofread"
       },
       {
         name: "awkwardParts",
         title:
           "仅作些许编辑, 修正非英语母语人士常犯的错误, 包括用词、语法和逻辑",
         prompt: "Fix only awkward parts",
-        emoji: "🔍",
+        emoji: "Natural"
       },
       {
         name: "streamline",
         title: "精简和梳理不通顺之处, 使整体内容更清晰",
         prompt: "Streamline any awkward words or phrases",
-        emoji: "🔍",
+        emoji: "Streamline"
       },
       {
         name: "polish",
         title: "更积极地编辑和润饰, 修改程度更高",
         prompt: "Polish any awkward words or phrases",
-        emoji: "🔍",
+        emoji: "Polish"
       },
       {
         name: "trim",
         title: "如果文本太过冗长",
         prompt: "Trim the fat",
-        emoji: "🔍",
+        emoji: "Trim"
       },
       {
         name: "clarityAndFlow",
         title: "Improve clarity and flow",
         prompt: "Improve clarity and flow",
-        emoji: "🔍",
+        emoji: "Improve"
       },
       {
         name: "significantClarityAndFlow",
         title: "Significantly improving clarity and flow",
         prompt: "Significantly improving clarity and flow",
-        emoji: "🔍",
+        emoji: "Significantly Improve"
       },
     ],
   },
