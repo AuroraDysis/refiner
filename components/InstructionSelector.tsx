@@ -50,7 +50,18 @@ function InstructionMenu({
         instructionNames.filter((name) => name !== instructionName)
       );
     } else {
-      setInstructionNames([...instructionNames, instructionName]);
+      // remove other instructions in the same group
+      if (instructionGroup.exclusive) {
+        const groupNames = instructionGroups
+                .find((group) => group.groupName === instructionGroup.groupName)
+                ?.instructions.map((instruction) => instruction.name)
+                .filter((name) => name !== instructionName);
+        setInstructionNames(
+          [...instructionNames.filter((name) => !groupNames?.includes(name)), instructionName]
+        );
+      } else {
+        setInstructionNames([...instructionNames, instructionName]);
+      }
     }
   };
 
