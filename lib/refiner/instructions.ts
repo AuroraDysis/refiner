@@ -12,6 +12,7 @@ export type InstructionName =
 
 export interface InstructionGroup {
   groupName: string;
+  exclusive?: boolean;
   emoji: string;
   instructions: Instruction[];
 }
@@ -26,6 +27,7 @@ export interface Instruction {
 export const instructionGroups: InstructionGroup[] = [
   {
     groupName: "Proofread",
+    exclusive: true,
     emoji: "🔍",
     // Proofread this 你可以从这个最基本的校稿指令开始。
     // Fix only awkward parts 仅作些许编辑, 修正非英语母语人士常犯的错误, 包括用词、语法和逻辑。
@@ -82,6 +84,7 @@ export const instructionGroups: InstructionGroup[] = [
   },
   {
     groupName: "Context",
+    exclusive: true,
     emoji: "📚",
     instructions: [
       {

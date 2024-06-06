@@ -38,6 +38,7 @@ function InstructionGroupToggleBar({
 
   return (
     <ToggleButtonGroup
+      exclusive={instructionGroup.exclusive}
       value={instructionNames}
       onChange={(event, value) => {
         setInstructionNames(value);
