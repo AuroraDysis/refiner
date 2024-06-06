@@ -56,7 +56,6 @@ function InstructionGroupToggleBar({
             setInstructionNames([...instructionNames, instructionName]);
           }
         }
-        console.log(instructionNames);
       }}
       size="small"
     >

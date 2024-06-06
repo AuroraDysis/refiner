@@ -50,11 +50,7 @@ function InstructionMenu({
         instructionNames.filter((name) => name !== instructionName)
       );
     } else {
-      // remove other instructions in the same group
       if (instructionGroup.exclusive)  {
-        // output instructionNames in nextjs console
-        console.log(instructionGroup);
-        console.log(instructionNames);
         const groupNames = instructionGroup.instructions.map((instruction) => instruction.name)
                 .filter((name) => name !== instructionName);
         setInstructionNames(
