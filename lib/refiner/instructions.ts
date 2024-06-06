@@ -70,13 +70,13 @@ export const instructionGroups: InstructionGroup[] = [
       },
       {
         name: "clarityAndFlow",
-        title: "Improve clarity and flow",
+        title: "提高清晰度和流畅性",
         prompt: "Improve clarity and flow",
         emoji: "Improve"
       },
       {
         name: "significantClarityAndFlow",
-        title: "Significantly improving clarity and flow",
+        title: "显著提高清晰度和流畅性",
         prompt: "Significantly improving clarity and flow",
         emoji: "Significantly Improve"
       },

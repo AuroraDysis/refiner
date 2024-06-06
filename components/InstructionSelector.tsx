@@ -100,7 +100,7 @@ function InstructionMenu({
                   toggleInstructionName(instruction.name);
                 }}
               />
-              {instruction.emoji} {instruction.title}
+              {instruction.emoji.length === 2 ? instruction.emoji + " " : instruction.emoji + ": "}{instruction.title}
             </MenuItem>
           </HtmlTooltip>
         ))}
