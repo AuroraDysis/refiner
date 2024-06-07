@@ -13,6 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Refiner</title>
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
